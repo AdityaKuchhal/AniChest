@@ -1,0 +1,326 @@
+.hero {
+    position: relative;
+    width: 100%;
+    height: 75vh;
+    min-height: 500px;
+    max-height: 800px;
+    overflow: hidden;
+}
+
+/* Background */
+.bgWrap {
+    position: absolute;
+    inset: 0;
+}
+
+.bgImage {
+    object-fit: cover;
+    object-position: center 20%;
+}
+
+.bgOverlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(6, 6, 11, 0.45);
+}
+
+.bgGradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right,
+            rgba(6, 6, 11, 0.95) 0%,
+            rgba(6, 6, 11, 0.7) 40%,
+            rgba(6, 6, 11, 0.2) 70%,
+            transparent 100%),
+        linear-gradient(to top,
+            var(--bg-primary) 0%,
+            rgba(6, 6, 11, 0.6) 30%,
+            transparent 60%);
+}
+
+[data-theme="light"] .bgGradient {
+    background: linear-gradient(to right,
+            rgba(248, 249, 252, 0.95) 0%,
+            rgba(248, 249, 252, 0.7) 40%,
+            rgba(248, 249, 252, 0.2) 70%,
+            transparent 100%),
+        linear-gradient(to top,
+            var(--bg-primary) 0%,
+            rgba(248, 249, 252, 0.6) 30%,
+            transparent 60%);
+}
+
+/* Content */
+.content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+.info {
+    max-width: 600px;
+}
+
+/* Spotlight Label */
+.spotlightLabel {
+    display: inline-block;
+    padding: 4px 12px;
+    background: var(--color-primary-glow);
+    border: 1px solid rgba(124, 58, 237, 0.3);
+    border-radius: var(--radius-full);
+    color: var(--color-primary);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+/* Title */
+.title {
+    font-family: var(--font-display);
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--text-primary);
+    line-height: 1.1;
+    margin-bottom: 16px;
+    letter-spacing: -1px;
+}
+
+/* Meta */
+.meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.metaItem {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.scoreBadge {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    background: rgba(245, 158, 11, 0.15);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    border-radius: var(--radius-full);
+    color: var(--color-warning);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* Genres */
+.genres {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+.genreBadge {
+    padding: 4px 12px;
+    background: var(--glass-bg);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-full);
+    color: var(--text-primary);
+    font-size: 12px;
+    font-weight: 600;
+    backdrop-filter: blur(8px);
+}
+
+/* Description */
+.description {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 24px;
+}
+
+/* CTAs */
+.ctas {
+    display: flex;
+    gap: 12px;
+}
+
+.ctaPrimary {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    background: linear-gradient(135deg, var(--color-success), #059669);
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: var(--radius-full);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    box-shadow: 0 4px 16px rgba(16, 185, 129, 0.3);
+}
+
+.ctaPrimary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(16, 185, 129, 0.4);
+}
+
+.ctaSecondary {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    background: var(--glass-bg-strong);
+    border: 1px solid var(--border-default);
+    color: var(--text-primary);
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: var(--radius-full);
+    text-decoration: none;
+    backdrop-filter: blur(8px);
+    transition: all var(--transition-fast);
+}
+
+.ctaSecondary:hover {
+    background: var(--glass-bg);
+    border-color: var(--border-strong);
+    transform: translateY(-2px);
+}
+
+/* Navigation Arrows */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    opacity: 0;
+}
+
+.hero:hover .arrow {
+    opacity: 1;
+}
+
+.arrow:hover {
+    background: rgba(0, 0, 0, 0.6);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.arrowLeft {
+    left: 20px;
+}
+
+.arrowRight {
+    right: 20px;
+}
+
+/* Progress Dots */
+.dots {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    gap: 6px;
+}
+
+.dot {
+    width: 32px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    overflow: hidden;
+    transition: all var(--transition-fast);
+    padding: 0;
+}
+
+.dot:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.dotActive {
+    width: 48px;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.dotProgress {
+    height: 100%;
+    background: var(--color-primary);
+    border-radius: var(--radius-full);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero {
+        height: 65vh;
+        min-height: 400px;
+    }
+
+    .title {
+        font-size: 32px;
+    }
+
+    .description {
+        display: none;
+    }
+
+    .bgGradient {
+        background: linear-gradient(to top,
+                var(--bg-primary) 0%,
+                rgba(6, 6, 11, 0.8) 40%,
+                rgba(6, 6, 11, 0.4) 100%);
+    }
+
+    .content {
+        align-items: flex-end;
+        padding-bottom: 60px;
+    }
+
+    .arrow {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 26px;
+    }
+
+    .ctas {
+        flex-direction: column;
+    }
+
+    .ctaPrimary,
+    .ctaSecondary {
+        justify-content: center;
+    }
+}
