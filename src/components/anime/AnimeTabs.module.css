@@ -1,0 +1,55 @@
+.tabsContainer {
+    border-bottom: 1px solid var(--border-subtle);
+    margin-bottom: 30px;
+    position: sticky;
+    top: 70px;
+    /* Below navbar */
+    z-index: 10;
+    background: rgba(10, 10, 15, 0.8);
+    backdrop-filter: blur(12px);
+    margin-top: -20px;
+    /* Pull up into hero slightly if needed, or just standard flow */
+}
+
+.tabsList {
+    display: flex;
+    gap: 32px;
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+    overflow-x: auto;
+    scrollbar-width: none;
+    /* Hide scrollbar */
+}
+
+.tabBtn {
+    position: relative;
+    border: none;
+    background: none;
+    color: var(--text-secondary);
+    font-size: 15px;
+    font-weight: 600;
+    padding: 16px 0;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: color 0.2s;
+}
+
+.tabBtn:hover {
+    color: var(--text-primary);
+}
+
+.active {
+    color: var(--text-primary);
+    /* Or accent color */
+}
+
+.indicator {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--hero-accent, var(--color-primary));
+    border-radius: 3px 3px 0 0;
+}

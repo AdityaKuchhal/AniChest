@@ -28,6 +28,12 @@ export function getSeasonName(season: string | null | undefined): string {
     return map[season] || season;
 }
 
+export function getSeasonLabel(season: string | null | undefined, year: number | null | undefined): string {
+    if (!season) return year ? year.toString() : "";
+    const name = getSeasonName(season);
+    return year ? `${name} ${year}` : name;
+}
+
 export function getFormatLabel(format: string | null | undefined): string {
     if (!format) return "";
     const map: Record<string, string> = {
